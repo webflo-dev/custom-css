@@ -1,0 +1,30 @@
+body {
+background: #476D88;
+}
+
+#header {
+background: #284051;
+}
+
+#divTabs[overflow=false],
+#divTabs[overflow=true] .tabs,
+#divTabs[overflow=true]>.nv-tabs-left,
+#divTabs[overflow=true]>.nv-tabs-right {
+    border-bottom: 1px solid #1e2f3a;
+}
+
+#divTabs[overflow=false]>.nv-tabs-right {
+    background-image: linear-gradient(270deg,#213444 30px,rgba(33,52,68,.2) 70px,rgba(33,52,68,0));
+}
+
+#divTabs li.tab {
+    background: #203542 url(b26d6db7737214141e05b57790baa3ec.png) repeat-x scroll 0 0;
+    border: 1px solid #552c3a;
+    border-bottom: 0;
+}
+
+#divTabs li.tab.selected {
+background: #4d778b url(ba3960eb918db09af8d56ed3adf1a4c0.png) repeat-x scroll 0 0;
+    border: 1px solid #1e2f3a !important;
+    margin-bottom: -1px;
+}
