@@ -1,167 +1,19 @@
-/* @import url('https://gilbn.github.io/theme.park/CSS/themes/jellyfin/plex.css'); */
+/* For Emby v4.4
 
-
-.cardOverlayContainer:hover {
-    background: radial-gradient(farthest-corner at 50% 50%,rgba(50,50,50,.5) 50%,#323232 100%);
-    opacity: 0;
-    transition: opacity .2s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    user-select: none;
-    box-shadow: 0 0 0 2px var(--theme-primary-color);
+/* Add colored border when hover poster */
+.cardOverlayContainer:hover
+ {
+    border: 1px solid var(--theme-primary-color) !important;
+    border-radius: 2% !important;
 }
 
-
-/*Remove multi-select checkbox option*/
-label[data-action="multiselect"] {
-   display: none;
+/* Hide play button and checkbox from poster */
+.cardOverlayContainer.itemAction label,
+.cardOverlayContainer.itemAction button {
+	display: none !important;
 }
-label.chkCardSelectContainer {
-   display: none;
-}
-
-/*Shrink cast thumnails, you can use just this part if you only want them smaller*/
-#castContent .card.portraitCard.personCard.card-hoverable.card-nofocustransform.card-withuserdata {width: 3.7cm; font-size: 80% !important;}
-#castContent .card.portraitCard.personCard.card-nofocustransform.card-withuserdata {width: 3.7cm; font-size: 80% !important;}
-#castContent .card.overflowPortraitCard.personCard.card-nofocustransform.card-withuserdata {width: 3.7cm; font-size: 80% !important;}
-
-#castContent .cardText { white-space: pre-line; }
-
-
-/*Correct image aspect ratio behaviour, set border-radius to zero for square tiles*/
-#castContent .cardContent-button.cardImageContainer.coveredImage.cardContent.cardContent-shadow.itemAction.lazy {background-size: cover; !important; /*border-radius: 1.7cm;*/}
-#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground1.cardContent.cardContent-shadow.itemAction {background-size: cover; !important; /*border-radius: 1.7cm;*/}
-#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground2.cardContent.cardContent-shadow.itemAction {background-size: cover; !important; /*border-radius: 1.7cm;*/}
-#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground3.cardContent.cardContent-shadow.itemAction {background-size: cover; !important; /*border-radius: 1.7cm;*/}
-#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground4.cardContent.cardContent-shadow.itemAction {background-size: cover; !important; /*border-radius: 1.7cm;*/}
-#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground5.cardContent.cardContent-shadow.itemAction {background-size: cover; !important; /*border-radius: 1.7cm;*/}
-#castContent .cardScalable {width: 3.1cm !important; height: 3.1cm !important; /*border-radius: 1.7cm;*/}
-#castContent .cardOverlayContainer.itemAction {/*border-radius: 1.7cm;*/}
-
-/*Center the mouseover favorites and threedot menu*/
-#castContent .cardOverlayButton-br {bottom: 4%; right: 15%; width: 70%;}
-#castContent .cardOverlayButton.cardOverlayButton-hover.itemAction.paper-icon-button-light {width: 50%; vertical-align: middle;}
-#castContent .cardOverlayButton.cardOverlayButton-hover.itemAction.emby-button {width: 50%; vertical-align: middle;}
-
-
-/* ---- Removes play button overlay on posters ----*/
-.cardOverlayFab-primary {
-   display:none;
-}
-
-/*----- Remove dark overlay on posters on hover ----*/
-/*.cardOverlayContainer{background: none!important;}*/
-
-/*----- Posters slightly transparent then opaque on hover ----*/
-.cardBox{
-opacity: .85;}
-.cardBox:hover{
-opacity: 1;}
-
-
 
 /* Remove scenes in Media Detail Page */
-#scenesCollapsible {
+.scenesSection {
 	display: none !important;
-}
-
-.mediaInfoStream {
-	display: none !important;
-}
-
-
-/*Make Played Indicator into Ribbon LHS*/
-.playedIndicator i,
-.syncIndicator i {
-	font-size: 150%;
-	transform: rotate(45deg);
-}
-
-.card .playedIndicator,
-.card .countIndicator {
-	width: 75px;
-	height: 25px;
-	border-radius: 0%;
-	transform: rotate(-45deg);
-	border-style: solid;
-	border-width: 1px;
-	border-color: rgba(255, 255, 255, 0.5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-div.cardIndicators {
-	right: initial top: 4px;
-	left: -21px;
-}
-
-
-/*List View*/
-#moviesPage div.listItemImage.itemAction.lazy i,
-[data-type="Trailer"] div.listItemImage.itemAction.lazy i {
-	transform: rotate(0deg);
-}
-
-div.listItemImage.itemAction.lazy div.listItemIndicators {
-	left: 7px;
-	top: 0;
-	font-size: 10px;
-}
-
-div.listItemImage.itemAction.lazy div.indicator {
-	width: 15px;
-	height: 15px;
-}
-
-
-/*Make Folder Indicator into Ribbon LHS*/
-div.videoIndicator {
-	transform: rotate(-45deg);
-	width: 75px;
-	left: -21px;
-	border-radius: 0%;
-	background: rgba(30, 30, 30, .7);
-	border-style: solid;
-	border-width: 1px;
-}
-
-div.videoIndicator i {
-	transform: rotate(45deg);
-}
-
-
-/* Episode Vertical List Played Indicator into Ribbon LHS*/
-#childrenContent div.listItem[data-action=none] {
-	padding: 0 0 30px 0;
-}
-
-#childrenContent div.listItemIndicators {
-	top: 4px;
-	left: -21px;
-}
-
-#childrenContent div.listItemImage-large {
-	width: 400px;
-	height: 225px;
-}
-
-#childrenContent div.playedIndicator {
-	width: 75px;
-	height: 25px;
-	border-radius: 0%;
-	transform: rotate(-45deg);
-	border-style: solid;
-	border-width: 1px;
-	border-color: rgba(255, 255, 255, 0.5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-#childrenContent div.listItem-content {
-	background: rgba(0, 0, 0, 0.3);
 }
